@@ -22,3 +22,5 @@ kff.final$splitvar <- kff.final %>% select(Description) %>% as.data.frame() %>%
 kff.final <- kff.final %>%
   mutate(date_adopted = mdy(splitvar$date)) %>%
   select(State, expanded, date_adopted)
+
+write_rds(kff.final,'medicaid-kff.rds')
